@@ -1,6 +1,6 @@
-import react from 'react';
+import React from 'react';
 
-export class ToDoFooter extends React.Component {
+export class TodoFooter extends React.Component {
     render() {
         return(
             <footer>
