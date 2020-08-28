@@ -7,17 +7,25 @@ class Counter extends React.Component {
             clicks: 0
         }
     }
-    
+
+    // underscore syntax for event handlers
+    _onButtonClick() {
+        this.setState({
+            clicks: this.state.clicks + 1
+        })
+    }
 
     render() {
         // object destructuring
         const { text } = this.props;
         const { clicks } = this.state;
         return (
-            <div>
+            <React.Fragment>
                 {text} : {clicks}
-                <button>Click Here!</button>
-            </div>
+                <button onClick={(e) => {this._onButtonClick(e)}}>Click Here!</button>
+            </React.Fragment>
         )
     }
 }
+
+export default Counter;
