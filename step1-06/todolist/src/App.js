@@ -34,6 +34,7 @@ export default class TodoApp extends React.Component {
   }
 
   render() {
+    const { filter, todos } = this.state;
     return (
       <div>
         <TodoHeader filter={filter}/>
