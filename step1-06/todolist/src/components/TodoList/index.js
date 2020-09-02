@@ -12,11 +12,16 @@ export const TodoList = (props) => {
             </React.Fragment>
         )
     });
-
+    const { filter, todos } = props;
+    const filteredTodos = Object.keys(todos).filter(id => {
+        return filter === 'all' || (filter === 'completed' && todos[id].completed) || (filter === 'active' && !todos[id].completed);
+    });
     return (
         <React.Fragment>
             <ul className="todos">
-                { items }
+                {filteredTodos.map( (id) => ( 
+                    <TodoListItem key={id} id={id} {...todos[id]} />
+                ))}
             </ul>
         </React.Fragment>
     )
