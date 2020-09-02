@@ -36,9 +36,9 @@ export default class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <TodoHeader />
-        <TodoList />
-        <TodoFooter />
+        <TodoHeader filter={filter}/>
+        <TodoList todos={todos} />
+        <TodoFooter todos={todos} />
       </div>
     );
   }
