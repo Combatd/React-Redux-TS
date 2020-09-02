@@ -10,9 +10,9 @@ export class TodoHeader extends React.Component {
                     <button className="submit">Add</button>
                 </div>
                 <nav className="filter">
-                    <button className="completed">all</button>
-                    <button>active</button>
-                    <button>completed</button>
+                    <button className={filter === 'all' ? 'selected' : ''}>all</button>
+                    <button className={filter === 'active' ? 'selected' : ''}>active</button>
+                    <button className={filter === 'completed' ? 'selected' : ''}>completed</button>
                 </nav>
             </header>
         );
